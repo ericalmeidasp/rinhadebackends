@@ -1,0 +1,16 @@
+server:
+  port: ${PORT}
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rinhadb
+    username: postgres
+    password: password
+  ## Hibernate properties
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database: POSTGRESQL
+  threads:
+    virtual:
+      enabled: true
