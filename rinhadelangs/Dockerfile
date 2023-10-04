@@ -12,6 +12,7 @@ RUN apk add maven
 
 RUN mvn -f /home/app/pom.xml clean package
 
-COPY --from=build /home/app/target/*.jar /usr/local/lib/app.jar
+RUN cp /home/app/target/*.jar /usr/local/lib/app.jar
+
 EXPOSE $PORT
 ENTRYPOINT ["java","-jar","-Xmx900m","-Xms650m","/usr/local/lib/app.jar"]
